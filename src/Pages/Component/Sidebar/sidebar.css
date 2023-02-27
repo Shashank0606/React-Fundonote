@@ -1,0 +1,15 @@
+.sidebar {
+    position: fixed;
+    width: 10vw;
+    height: 100vh;
+    border-right: black 1px solid;
+    padding: 5px;
+}
+
+.bar {
+    padding: 5px;
+}
+
+.bar:hover {
+    background-color: aliceblue;
+}

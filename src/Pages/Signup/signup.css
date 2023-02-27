@@ -1,0 +1,65 @@
+.custom-input {
+    display: flex;
+
+}
+
+.sub-title {
+    margin: 10px;
+}
+
+.text1 {
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.username {
+    display: flex;
+    flex-direction: column;
+    /* margin: 3px; */
+    padding-bottom: 10px;
+}
+
+.username .email-text {
+    padding-bottom: 10px;
+}
+
+.username div {
+    width: 25vw;
+}
+
+.side-img {
+    width: 30vw;
+}
+
+.password-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.pass {
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: start;
+}
+
+.container4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container4 .box-container .bordered-box {
+    display: flex;
+    flex-direction: column;
+    width: 25vw
+}
+
+.container4 .box-container {
+    flex-direction: row;
+    width: auto;
+}

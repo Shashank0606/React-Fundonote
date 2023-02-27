@@ -1,0 +1,35 @@
+.header {
+    justify-content: space-between;
+    border: 1px solid rgb(175, 162, 162);
+    padding: 1% 0;
+    width: 100vw;
+
+}
+
+.left {
+    width: 10vw;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+}
+
+.search {
+    width: 50vw;
+    align-items: center;
+    display: flex;
+}
+
+.reload {
+    justify-content: space-between;
+    width: 10vw;
+    align-items: center;
+    display: flex;
+}
+
+.option {
+    justify-content: space-between;
+    width: 5vw;
+    align-items: center;
+    display: flex;
+}

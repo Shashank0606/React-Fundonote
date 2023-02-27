@@ -1,0 +1,151 @@
+.header,
+.left,
+.reload,
+.option,
+.search {
+    display: flex;
+
+    /* width: 45%; */
+}
+
+.search {
+    width: 50vw;
+    align-items: center;
+}
+
+.header {
+    justify-content: space-between;
+    border: 1px solid rgb(175, 162, 162);
+    padding: 1%;
+    width: 100vw;
+
+}
+
+.left {
+    width: 10vw;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.reload {
+    justify-content: space-between;
+    width: 10vw;
+    align-items: center;
+}
+
+.option {
+    justify-content: space-between;
+    width: 5vw;
+    align-items: center;
+}
+
+.css-1vm0r4s-MuiPaper-root {
+    width: 100%;
+}
+
+.icons {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    width: 23vw;
+
+}
+
+.icons1 {
+    width: 100%;
+    /* border: none; */
+    /* background-color: #cacdcf; */
+    color: black;
+    height: 30px;
+    margin-top: 2px;
+    padding: 5px 10px;
+    font-size: 15px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    border: solid rgb(189, 180, 180) 1px;
+
+}
+
+.note {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notes-box {
+    display: flex;
+    border: black 1px solid;
+    border-radius: 4px;
+    padding: 5px 10px;
+    width: 30vw;
+    cursor: pointer;
+
+}
+
+.note-container {
+    border: black 1px solid;
+    padding: 25px 45px 25px 25px;
+}
+
+.note-title {
+    width: 100%;
+    border: none;
+    /* background-color: #cacdcf; */
+    color: black;
+    height: 30px;
+    margin-bottom: 2px;
+    padding: 5px 10px;
+    font-size: 15px;
+    border: solid rgb(189, 180, 180) 1px;
+    background-color: transparent;
+}
+
+.note-body {
+    width: 100%;
+    border: none;
+    /* background-color: #cacdcf; */
+    color: black;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 15px;
+    border: solid rgb(189, 180, 180) 1px;
+    background-color: transparent;
+}
+
+.note-title::placeholder,
+.note-body::placeholder {
+    color: black;
+}
+
+/* .close-icon {
+    right: 10px;
+    position: absolute;
+    top: 3px;
+    cursor: pointer;
+} */
+
+.all-note {
+    width: 100vw;
+    height: 50vh;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container1 {
+
+    border: 1px solid black;
+    width: 60vw;
+    height: auto;
+    display: flex;
+    padding: 20px;
+}
