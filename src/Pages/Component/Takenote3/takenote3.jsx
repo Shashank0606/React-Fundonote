@@ -8,7 +8,7 @@ import React from "react";
 import ArchiveIcon from "@mui/icons-material/Archive";
 
 import DeleteIcon from "@mui/icons-material/Delete";
-import { sendToTrash } from "../../../Services/UserServices";
+import { sendToTrash, sendToArchive } from "../../../Services/UserServices";
 
 function Takenote3(props) {
   return (
@@ -25,7 +25,12 @@ function Takenote3(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <ArchiveIcon />
+          <ArchiveIcon onClick={() =>
+            sendToArchive(props.noteId).then((res) => {
+              console.log("response", res);
+              alert("Send to Archive");
+            })
+          } />
 
           <DeleteIcon
             onClick={() =>

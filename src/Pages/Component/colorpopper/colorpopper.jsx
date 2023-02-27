@@ -5,6 +5,7 @@ import Popper from "@mui/material/Popper";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
 import { updateColor } from "../../../Services/UserServices";
 
+
 export default function ColorPopper({ action, listenToColorPopper, note }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const DashContext = React.createContext();
@@ -14,7 +15,7 @@ export default function ColorPopper({ action, listenToColorPopper, note }) {
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
 
-  const colors = ["red", "blue", "orange"];
+  const colors = ["red", "blue", "orange", "green", "skyblue", "violet"];
 
   const selectColor = async (color) => {
     if (action === "create") {

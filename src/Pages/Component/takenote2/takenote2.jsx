@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ImageIcon from "@mui/icons-material/Image";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";

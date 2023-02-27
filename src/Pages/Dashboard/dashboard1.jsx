@@ -4,7 +4,7 @@ import TakeNote2 from "../Component/takenote2/takenote2";
 import TakeNote3 from "../Component/Takenote3/takenote3";
 import { Grid } from "@mui/material";
 import { Container } from "@mui/material";
-import { getNotes, getTrashedNotes } from "../../Services/UserServices";
+import { getNotes, getTrashedNotes, getArchiveNotes } from "../../Services/UserServices";
 import Header1 from "../Component/Header/header";
 import Sidebar from "../Component/Sidebar/Sidebar";
 
@@ -23,7 +23,7 @@ export default function Dashboard1() {
 
   React.useEffect(() => {
     if (option === "archive") {
-      getNotes()
+      getArchiveNotes()
         .then((response) => {
           setAllnotes([...response.data.data]);
         })

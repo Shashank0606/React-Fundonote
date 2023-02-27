@@ -31,10 +31,18 @@ export const getTrashedNotes = async () => {
 };
 
 // get all from Archive
+export const getArchiveNotes = async () => {
+  return axios.get(baseUrl + "notes/archive", headerConfig);
+};
 
 // send to TRASH
 export const sendToTrash = async (id) => {
   return axios.get(baseUrl + `notes/${id}/trash`, headerConfig);
+};
+
+// send to Archive
+export const sendToArchive = async (id) => {
+  return axios.get(baseUrl + `notes/${id}/archive`, headerConfig);
 };
 
 
