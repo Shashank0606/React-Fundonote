@@ -4,14 +4,25 @@ import TakeNote2 from "../Component/takenote2/takenote2";
 import TakeNote3 from "../Component/Takenote3/takenote3";
 import { Grid } from "@mui/material";
 import { Container } from "@mui/material";
-import { getNotes, getTrashedNotes, getArchiveNotes } from "../../Services/UserServices";
+import {
+  getNotes,
+  getTrashedNotes,
+  getArchiveNotes,
+} from "../../Services/UserServices";
 import Header1 from "../Component/Header/header";
 import Sidebar from "../Component/Sidebar/Sidebar";
+
+import MiniDrawer from "../Component/Drawer/drawer";
 
 export default function Dashboard1() {
   const [allnotes, setAllnotes] = React.useState([]);
   const [shiftNote, setShiftNote] = React.useState(false);
   const [option, setOption] = React.useState("");
+
+  const [drawer, setDrawer] = React.useState(false);
+  const listenToHeader = () => {
+    setDrawer(!drawer);
+  };
 
   const opTn1 = () => {
     setShiftNote(true);
@@ -21,68 +32,48 @@ export default function Dashboard1() {
     setShiftNote(false);
   };
 
-  React.useEffect(() => {
-    if (option === "archive") {
-      getArchiveNotes()
-        .then((response) => {
-          setAllnotes([...response.data.data]);
-        })
-        .catch((err) => {
-          console.log("error :", err);
-        });
-    } else if (option === "trash") {
-      getTrashedNotes()
-        .then((response) => {
-          setAllnotes([...response.data.data]);
-        })
-        .catch((err) => {
-          console.log("error :", err);
-        });
-    } else {
-      getNotes()
-        .then((response) => {
-          setAllnotes([...response.data.data]);
-        })
-        .catch((err) => {
-          console.log("error :", err);
-        });
-    }
-  }, [option]);
-
-  // let arrayOfAllNotes = [];
-  // const gettingAllNotes = async () => {
-  //     arrayOfAllNotes = await getNotes();
-  //     setAllnotes(arrayOfAllNotes);
+  // const Nav = () => {
+  //   setShiftNav(true);
   // };
 
-  // React.useEffect(() => {
-  //     gettingAllNotes();
-  // }, []);
+  const listenToDrawer = (setOption) => {
+    if (setOption === "Notes") {
+      getNotes().then((response) => {
+        setAllnotes([...response.data.data]);
+      });
+    } else if (setOption === "Archive") {
+      getArchiveNotes().then((response) => {
+        setAllnotes([...response.data.data]);
+      });
+    } else if (setOption === "Trash") {
+      getTrashedNotes().then((response) => {
+        setAllnotes([...response.data.data]);
+      });
+    }
+  };
+
+  React.useEffect(() => {
+    listenToDrawer("Notes");
+  }, []);
 
   return (
     <div>
       {/* <DashContext.Provider value={gettingAllNotes}> */}
       <div>
-        <Header1 />
-        <Sidebar setOption={setOption} />
+        <Header1 listenToHeader={listenToHeader} />
+        {/* <Sidebar setOption={setOption} /> */}
+        <MiniDrawer
+          open={drawer}
+          listenToDrawer={listenToDrawer}
+          listenToHeader={listenToHeader}
+        />
       </div>
-      {/* <TakeNote1 /> */}
-      {/* <TakeNote2 /> */}
 
-      {shiftNote ? <TakeNote2 opTn2={opTn2} /> : <TakeNote1 opTn1={opTn1} />}
-
-      {/* <Container
-                    className="container1"
-                    style={{ width: "80vw", marginTop: "55px" }}
-                >
-                    <Grid container spacing={2} className="gridbox">
-                        {allnotes.map((note) => (
-                            <Grid item lg={3} md={6} sm={12} xs={12}>
-                                <TakeNote3 note={note} />
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Container> */}
+      {shiftNote ? (
+        <TakeNote2 opTn2={opTn2} listenToDrawer={listenToDrawer} />
+      ) : (
+        <TakeNote1 opTn1={opTn1} />
+      )}
 
       <div>
         <Container
@@ -98,6 +89,7 @@ export default function Dashboard1() {
                   Description={note.description}
                   color={note.color}
                   noteId={note._id}
+                  listenToDrawer={listenToDrawer}
                 />
               </Grid>
             ))}

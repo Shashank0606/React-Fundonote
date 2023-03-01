@@ -3,8 +3,7 @@ import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
 // import { DashContext } from "../../Dashboard/dashboard";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
-import { updateColor } from "../../../Services/UserServices";
-
+import { updateNotes } from "../../../Services/UserServices";
 
 export default function ColorPopper({ action, listenToColorPopper, note }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -22,7 +21,7 @@ export default function ColorPopper({ action, listenToColorPopper, note }) {
       listenToColorPopper(color);
     } else {
       note["color"] = color;
-      let response = await updateColor(note, note._id);
+      let response = await updateNotes(note, note._id);
       refreshDashboard();
     }
   };

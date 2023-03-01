@@ -14,6 +14,7 @@ import "../src/Pages/Component/Header/header.css";
 import "../src/Pages/Component/Takenote1/takenote1.css";
 import "./Pages/Component/takenote2/takenote2.css";
 import "./Pages/Component/Sidebar/sidebar.css";
+import "./Pages/Component/Drawer/drawer.css";
 
 function App() {
   return (

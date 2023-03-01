@@ -149,3 +149,15 @@
     display: flex;
     padding: 20px;
 }
+
+div#simple-popper {
+    z-index: 1400;
+}
+
+.MuiTypography-root.MuiTypography-h5.css-ag7rrr-MuiTypography-root,
+.css-e784if-MuiTypography-root {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Paper from "@mui/material/Paper";
@@ -11,11 +11,20 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import AppsIcon from "@mui/icons-material/Apps";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 
-export default function Header1() {
+
+
+export default function Header1(props) {
+
+  const callFromHeader = () => {
+    props.listenToHeader()
+  }
+
+  // const [displayNav, setDisplayNav] = useState(false)
+
   return (
     <div className="header">
       <div className="left">
-        <MenuIcon />
+        <MenuIcon onClick={callFromHeader} />
         <img
           src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
           alt="Keep Icon"

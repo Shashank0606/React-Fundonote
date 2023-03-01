@@ -24,6 +24,7 @@ export default function TakeNote2(props) {
     let response = await postNotes(apiData);
     console.log(response);
     props.opTn2();
+    props.listenToDrawer("Notes");
   };
 
   const taketitle = (event) => {

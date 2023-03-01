@@ -45,7 +45,6 @@ export const sendToArchive = async (id) => {
   return axios.get(baseUrl + `notes/${id}/archive`, headerConfig);
 };
 
-
 // Create note
 export const postNotes = async (obj) => {
   let response = await axios.post(baseUrl + "notes", obj, headerConfig);
@@ -53,9 +52,8 @@ export const postNotes = async (obj) => {
   return response.data.data;
 };
 
-
-// color Updatating
-export const updateColor = async (obj, id) => {
+// Updatating Notes
+export const updateNotes = async (obj, id) => {
   let response = await axios.put(`${baseUrl}/notes/${id}`, obj, headerConfig);
   console.log(response);
   return response.data.data;
