@@ -66,6 +66,7 @@ export default function Dashboard1() {
           open={drawer}
           listenToDrawer={listenToDrawer}
           listenToHeader={listenToHeader}
+          dispatch={dispatchEvent}
         />
       </div>
 

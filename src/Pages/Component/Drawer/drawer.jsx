@@ -21,7 +21,9 @@ import MailIcon from "@mui/icons-material/Mail";
 
 import ArchiveIcon from "@mui/icons-material/Archive";
 import DeleteIcon from "@mui/icons-material/Delete";
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+
+import { connect } from "react-redux";
 
 const drawerWidth = 240;
 
@@ -90,15 +92,20 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function MiniDrawer({ open, listenToDrawer, listenToHeader }) {
+function MiniDrawer(props) {
   const theme = useTheme();
+
+  const { open, listenToDrawer } = props;
 
   return (
     <Box sx={{ display: "flex", marginTop: "50px" }}>
       <Drawer variant="permanent" open={open}>
         <List>
           <ListItem
-            onClick={() => listenToDrawer("Notes")}
+            onClick={() => {
+              listenToDrawer("Notes");
+              props.dispatch({ type: "Notes" });
+            }}
             key={"Notes"}
             disablePadding
             sx={{ display: "block" }}
@@ -123,7 +130,10 @@ export default function MiniDrawer({ open, listenToDrawer, listenToHeader }) {
             </ListItemButton>
           </ListItem>
           <ListItem
-            onClick={() => listenToDrawer("Archive")}
+            onClick={() => {
+              listenToDrawer("Archive");
+              props.dispatch({ type: "Archive" });
+            }}
             key={"Archive"}
             disablePadding
             sx={{ display: "block" }}
@@ -151,7 +161,10 @@ export default function MiniDrawer({ open, listenToDrawer, listenToHeader }) {
             </ListItemButton>
           </ListItem>
           <ListItem
-            onClick={() => listenToDrawer("Trash")}
+            onClick={() => {
+              listenToDrawer("Trash");
+              props.dispatch({ type: "Trash" });
+            }}
             key={"Trash"}
             disablePadding
             sx={{ display: "block" }}
@@ -178,6 +191,8 @@ export default function MiniDrawer({ open, listenToDrawer, listenToHeader }) {
           </ListItem>
         </List>
       </Drawer>
-    </Box >
+    </Box>
   );
 }
+export default connect()(MiniDrawer);
+// export default MiniDrawer;

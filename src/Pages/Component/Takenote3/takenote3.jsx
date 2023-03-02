@@ -30,16 +30,15 @@ const style = {
 };
 
 function Takenote3(props) {
-  const [open, setOpen] = React.useState(false);
   const [editNoteObj, setEditNoteObj] = React.useState({
     title: props.Title,
     description: props.Description,
   });
 
+  const [open, setOpen] = React.useState(false);
   const toggleModel = () => setOpen(!open);
 
   const [color, setColor] = useState("");
-
   const listenToColorPopper = (color) => {
     setColor(color);
     let apiData = {

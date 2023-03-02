@@ -10,16 +10,12 @@ import ViewStreamIcon from "@mui/icons-material/ViewStream";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsIcon from "@mui/icons-material/Apps";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import { connect } from "react-redux";
 
-
-
-export default function Header1(props) {
-
+function Header1(props) {
   const callFromHeader = () => {
-    props.listenToHeader()
-  }
-
-  // const [displayNav, setDisplayNav] = useState(false)
+    props.listenToHeader();
+  };
 
   return (
     <div className="header">
@@ -29,7 +25,7 @@ export default function Header1(props) {
           src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
           alt="Keep Icon"
         />
-        <div className="keep">Keep</div>
+        <div className="keep">{props.title}</div>
       </div>
       <div className="search">
         <Paper
@@ -64,3 +60,9 @@ export default function Header1(props) {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return { title: state.navReducer.title };
+};
+export default connect(mapStateToProps)(Header1);
+// export default Header1
