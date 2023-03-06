@@ -9,12 +9,13 @@ import "./Pages/Signup/signup.css";
 import "./Pages/Sigin/signin.css";
 import Dashboard from "./Pages/Dashboard/dashboard";
 import "../src/Pages/Dashboard/dashboard.css";
-import Dashboard1 from "../src/Pages/Dashboard/dashboard1";
+import Dashboard1 from "./Pages/Dashboard/dashboard";
 import "../src/Pages/Component/Header/header.css";
 import "../src/Pages/Component/Takenote1/takenote1.css";
 import "./Pages/Component/takenote2/takenote2.css";
 import "./Pages/Component/Sidebar/sidebar.css";
 import "./Pages/Component/Drawer/drawer.css";
+import Demo from "./Pages/Dashboard/Dashboard1";
 
 function App() {
   return (
